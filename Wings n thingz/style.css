@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+:root {
+    --primary: #FF6B6B;
+    --primary-dark: #e05555;
+    --secondary: #6b5bff;
+    --dark: #2e2e2e;
+    --light: #f8f8f8;
+    --grey: #777777;
+}
+
+.main-container {
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+/* *****************
+Header / Navigation
+*******************/
+
+.header-title {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.header-title::after {
+    content: "!";
+    color: var(--primary);
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    margin-left: 20px;
+    gap: 20px;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a  {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.2s;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--primary)
+}
+
+/* *****************
+    Hero Section
+*******************/
+
+hr {
+    border: none;
+    border-top: 1.5px solid #e0e0e0;
+    margin: 50px 0;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.hero h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    max-width: 700px;
+}
+
+.hero .title {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 16px;
+    margin-bottom: 32px;
+    line-height: 1.6;
+    color: var(--grey);
+    max-width: 600px;
+}
+
+/* Hero Buttons */
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.left-btn {
+    background-color:var(--primary);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 107,107, 0.3);
+}
+
+.left-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,107 ,107 ,0.4 );
+}
+
+.right-btn {
+    background-color: transparent;
+    color: var(--dark);
+    border-color: var(--dark);
+}
+
+.right-btn:hover {
+    background-color: var(--dark);
+    color:#fff;
+    transform: translateY(-2px);
+}
+
+/* ***************************
+    Hero Section - Right Side
+******************************/
+
+.rightside-hero img {
+    position: relative;
+}
+
+.delivery-btn, .off-btn {
+    position: absolute;
+    background-color: #fff;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 25px rgba(0,0,0,0.2);
+    font-weight: bold; 
+}
+
+.delivery-btn {
+    bottom: 150px;
+    left: 680px;
+    border: none;
+}
+
+.off-btn {
+    display: block;
+    top: 153px;
+    right: 170px;
+    background-color: var(--primary);
+    color: var(--light);
+    border: none;
+}
+
+/* ***************************
+    Stat-section
+******************************/
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 90px;
+}
+
+.stat-item {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #f0f0f0;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.stat-item h3 {
+    font-size: 42px;
+    margin-bottom: 8px; 
+    font-weight: 800;
+    color: var(--primary);
+    /* background: linear-gradient(to right, var(--primary), var(--secondary)); */
+}
+
+.stat-item p {
+    font-size: 16px;
+    color: var(--grey);
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+/* ***************************
+    Media Queries
+******************************/
+
+@media (max-width: 1130px) {
+    .header-flex {
+        display: block;
+    }
+    .header-title {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .main-container {
+        padding: 30px;
+    }
+
+    .delivery-btn, .off-btn {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero {
+        display: block;
+    }
+
+     .leftside-hero h2 {
+        display: block;
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+
+    .leftside-hero h1 {
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    .leftside-hero p {
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    .rightside-hero img {
+        display: block;
+        margin: 30px auto;
+    }
+
+    .stats {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+    }
+    .stat-item {
+         margin-bottom: 20px;
+    }
+    nav {
+       display: flex;
+       justify-content: center;
+    }  
+    nav ul {
+        flex-direction: column;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .button .right-btn {
+        width: 50%;
+    }
+}
+
+@media (max-width: 570px){
+    .stats {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .rightside-hero img {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+    .buttons .right-btn {
+        margin-bottom: 20px;
+        padding: 3px 12px;
+    }
+
+    .buttons .left-btn {
+        padding: 3px 12px;
+    }
+
+    .buttons {
+        text-align: center;
+    }
+
+    .main-container {
+        margin-top: 20px;
+    }
+}
+
+
+
+
+@media (max-width: 500px) {
+    .stats {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
